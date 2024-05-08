@@ -4,7 +4,7 @@ const {User,validate} = require("../model/user");
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken");
 const users = require("./users");
-const config = require("config")
+// const config = require("config")
 
 auth.post("/", async(req,resp) => {
     const {error} = validate(req.body);
@@ -30,7 +30,7 @@ auth.post("/", async(req,resp) => {
             status:false,
     });
 
-    const token = jwt.sign({userName:user.userName}, config.get("privateKey"))
+    const token = jwt.sign({userName:user.userName}, )
 
     console.log(user.userName);
     resp.send({
